@@ -1,3 +1,19 @@
-<p>
-  rates-table works!
-</p>
+<h4 *ngIf="!rates">Loading...</h4>
+<table *ngIf="rates">
+  <thead>
+    <tr>
+      <th colspan="2">Base Rate: USD</th>
+    </tr>
+    <tr>
+      <th>Currency</th>
+      <th>Exchange Rate</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let rate of rates | keyvalue">
+      <td>{{rate.key}}</td>
+      <td>{{rate.value | currency: rate.key}}</td>
+    </tr>
+  </tbody>
+</table>

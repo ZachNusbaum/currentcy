@@ -9,8 +9,8 @@ export class OpenRatesService {
 
   constructor(private http: HttpClient) { }
 
-  public listAll() {
-    return this.http.get(`${this.BASE_URI}`);
+  public listAll(base: string = 'USD') {
+    return this.http.get(`${this.BASE_URI}?base=${base}`);
   }
 
   public getLatest(baseCurrency: string, newCurrency: string) {
