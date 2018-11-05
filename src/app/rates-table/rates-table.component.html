@@ -13,7 +13,7 @@
   <tbody>
     <tr *ngFor="let rate of rates | keyvalue">
       <td>{{rate.key}}</td>
-      <td>{{rate.value | currency: rate.key}}</td>
+      <td>{{rate.value | number}}</td>
     </tr>
   </tbody>
 </table>
