@@ -5,6 +5,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {MatCardModule, MatCard} from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,13 +15,15 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { HomepageComponent } from './homepage/homepage.component';
 import { LookupFormComponent } from './lookup-form/lookup-form.component';
+import { RatesTableComponent } from './rates-table/rates-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     HomepageComponent,
-    LookupFormComponent
+    LookupFormComponent,
+    RatesTableComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { LookupFormComponent } from './lookup-form/lookup-form.component';
     MatSelectModule,
     MatFormFieldModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

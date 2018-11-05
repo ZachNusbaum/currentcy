@@ -1,44 +1,50 @@
-<form (ngSubmit)="onSubmit(amount.value, baseCurrency.value, newCurrency.value, amount.value)" #form="ngForm">
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Amount" #amount>
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-select placeholder="Original Currency" #baseCurrency>
-      <mat-option *ngFor="let currency of currencies" [value]="currency[0]">
-        {{currency[0]}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-select placeholder="New Currency" #newCurrency>
-      <mat-option *ngFor="let currency of currencies" [value]="currency[0]">
-        {{currency[0]}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-  <input type="submit">
-</form>
-
-<table *ngIf="!!result">
-  <thead>
-    <tr>
-      <th>Amount</th>
-      <th>Base Currency</th>
-      <th>=</th>
-      <th>Amount</th>
-      <th>New Currency</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td id="baseAmount" #a>{{bAmount | currency:bCurr}}</td>
-      <td id="baseCurrency" #b>{{bCurr}}</td>
-      <td></td>
-      <td id="newAmount" #c>{{nAmount | currency:nCurr}}</td>
-      <td id="newCurrency" #d>{{nCurr}}</td>
-    </tr>
-  </tbody>
-</table>
+<mat-card>
+    <form (ngSubmit)="onSubmit(amount.value, baseCurrency.value, newCurrency.value)" #form="ngForm">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Amount" #amount>
+      </mat-form-field>
+      <p>
+        <mat-form-field>
+          <mat-select placeholder="Original Currency" #baseCurrency>
+            <mat-option *ngFor="let currency of currencies" [value]="currency[0]">
+              {{currency[0]}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </p>
+      
+      <p>
+        <mat-form-field>
+          <mat-select placeholder="New Currency" #newCurrency>
+            <mat-option *ngFor="let currency of currencies" [value]="currency[0]">
+              {{currency[0]}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </p>
+      
+      <input type="submit">
+    </form>
+    
+    <table *ngIf="!!result">
+      <thead>
+        <tr>
+          <th>Amount</th>
+          <th>Base Currency</th>
+          <th>=</th>
+          <th>Amount</th>
+          <th>New Currency</th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <tr>
+          <td id="baseAmount" #a>{{bAmount | currency:bCurr}}</td>
+          <td id="baseCurrency" #b>{{bCurr}}</td>
+          <td></td>
+          <td id="newAmount" #c>{{nAmount | currency:nCurr}}</td>
+          <td id="newCurrency" #d>{{nCurr}}</td>
+        </tr>
+      </tbody>
+    </table>
+</mat-card>
