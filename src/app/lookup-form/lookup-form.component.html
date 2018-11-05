@@ -25,26 +25,5 @@
       
       <input type="submit">
     </form>
-    
-    <table *ngIf="!!result">
-      <thead>
-        <tr>
-          <th>Amount</th>
-          <th>Base Currency</th>
-          <th>=</th>
-          <th>Amount</th>
-          <th>New Currency</th>
-        </tr>
-      </thead>
-    
-      <tbody>
-        <tr>
-          <td id="baseAmount" #a>{{bAmount | currency:bCurr}}</td>
-          <td id="baseCurrency" #b>{{bCurr}}</td>
-          <td></td>
-          <td id="newAmount" #c>{{nAmount | currency:nCurr}}</td>
-          <td id="newCurrency" #d>{{nCurr}}</td>
-        </tr>
-      </tbody>
-    </table>
+    <h4 *ngIf="!!result">{{bAmount | currency:bCurr}} is equal to {{nAmount | currency:nCurr}}.</h4>
 </mat-card>
